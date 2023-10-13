@@ -1,0 +1,22 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+
+{% comment %} <!DOCTYPE html>
+<html>
+    <head>
+        <title>Tasks</title>
+    </head>
+
+    <body> {% endcomment %}
+        <h1>Add Task</h1>
+        <form action="{% url 'tasks:add' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="submit">
+        </form>
+        <a href={% url 'tasks:index' %}> Task List </a>
+    {% comment %} </body>
+</html> {% endcomment %}
+
+{% endblock %}
